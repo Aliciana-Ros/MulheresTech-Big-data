@@ -1,0 +1,24 @@
+#1) Um pescador precisa pagar uma multa caso o peso dos peixes exceda 100 quilos. Crie uma função para calcular a multa, se aplicável.
+
+#Função para calcular a multa
+def calcular_multa(peso_peixes, limite=100, taxa=3.00):
+    # Verifica se o peso excede o limite
+    if peso_peixes > limite:
+        excesso = peso_peixes - limite
+        multa = excesso * taxa
+        return multa
+    else:
+       
+        return 0.0
+
+
+peso_peixes = float(input("Digite o peso total dos peixes por quilos: "))
+
+
+multa = calcular_multa(peso_peixes)
+
+if multa > 0:
+    print(f"Você excedeu o limite de 100 quilos. A multa será de R$ {multa:.2f}.")
+else:
+    print("Você está dentro do limite de 100 quilos. Não há multa.")
+
